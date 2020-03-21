@@ -8,6 +8,13 @@
     <p>{{ok ? 'yes' : 'no'}}</p>
     <p>{{message.split('').reverse().join('') }}</p>
     <p v-if="seen">现在你看到我了</p>
+    <a v-bind:href="url">linkto</a>
+    <a v-on:click="doSomething">...</a>
+    <div @click="click1">
+      <div @click.stop="click2">
+        click me
+      </div>
+    </div>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -101,7 +108,19 @@ export default {
       number: 10,
       ok: false,
       message: 'vue',
-      seen: 1
+      seen: 1,
+      url: 'http://localhost:8080'
+    }
+  },
+  methods: {
+    click1: function () {
+      console.log('"click1"')
+    },
+    click2: function () {
+      console.log('"click2"')
+    },
+    doSomething: function () {
+      console.log('"doSomething"')
     }
   }
 }
