@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="="utf-8>
+    </head>
+    <title>getstart</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+<body>
+    <div id="app">
+        <div 
+        class="test"
+        v-bind:class="{ active: isActive ? active : '', 'green': isgreen, 'text-danger': hasError }"
+        style="width: 200px; height: 200px; text-align: center;line-height: 200px;">
+        hi vue
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            isActive: false,
+            isgreen: true,
+            hasError: false
+        }
+    });
+    </script>
+
+</body>
+<style>
+    .test{font-size: 50px;}
+    .green{color: lightseagreen;}
+    .active{background-color: red;}
+</style>
+
+</html>

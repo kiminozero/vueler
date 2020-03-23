@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="="utf-8>
+    </head>
+    <title>getstart</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+<body>
+    <div id="app">
+        <div v-if="type === 'A'">
+            A
+          </div>
+          <div v-else-if="type === 'B'">
+            B
+          </div>
+          <div v-else-if="type === 'C'">
+            C
+          </div>
+          <div v-else>
+            Not A/B/C
+          </div>
+          <!-- v-show aways in the html. just switch disabled or not -->
+          <h1 v-show = "ok"> v-show </h1>
+    </div>
+    <script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            type: 'A',
+            ok: true,
+            msg: 'getstart Hello!'
+        }
+    });
+    </script>
+
+</body>
+
+</html>
