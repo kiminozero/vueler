@@ -12,13 +12,13 @@
     <input v-model="userId" placeholder="edit me">
     <button type="button1" @click="getuser"> submit </button>
     <button type="button2" @click="deluser"> deluser </button>
-    <p>Message is: {{ quser }}</p>
+    <p>getuser : {{ quser }}</p>
     
   </div>
   <div class="red">{{ info.data }}</div>
   <div>
-    <input v-model="user" placeholder="edit me">
-    <p>Message is: {{ user }}</p>
+    <input v-model="user" placeholder="input userName">
+    <!-- <p> {{ user }} id is: {{info.data}} </p> -->
     <button type="button" @click="submit"> submit </button>
   </div>
   
@@ -29,9 +29,10 @@ new Vue({
   el: '#app',
   data: {
     userId: null,
-    user: null,
+    user: 'user',
     info: 'user',
-    quser: ''
+    quser: '',
+    userName: ''
   },
   methods: {
     getuser: function () {
