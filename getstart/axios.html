@@ -17,7 +17,11 @@
   </div>
   <div class="red">{{ info.data }}</div>
   <div>
-    <input v-model="user" placeholder="input userName">
+    <input v-model="name" placeholder="input userName">
+    <input v-model="age" placeholder="input userAge">
+    <input v-model="salary" placeholder="input userSalary">
+    <input v-model="mobile" placeholder="input usermobile">
+
     <!-- <p> {{ user }} id is: {{info.data}} </p> -->
     <button type="button" @click="submit"> submit </button>
   </div>
@@ -32,7 +36,11 @@ new Vue({
     user: 'user',
     info: 'user',
     quser: '',
-    userName: ''
+    userName: '',
+    name:'',
+    age: 1,
+    salary: 11,
+    mobile: '',
   },
   methods: {
     getuser: function () {
@@ -55,7 +63,10 @@ new Vue({
     submit: function () {
       console.log(this.user);
       var postObj = {
-          name: this.user,
+          name: this.name,
+          age: this.age,
+          salary: this.salary,
+          mobile: this.mobile,
       };
       axios
       .post('http://localhost:1323/users',postObj)
