@@ -18,8 +18,8 @@
   <div class="red">{{ info.data }}</div>
   <div>
     <input v-model="name" placeholder="input userName">
-    <input v-model="age" placeholder="input userAge">
-    <input v-model="salary" placeholder="input userSalary">
+    <input type="tel" max="999" v-model="age" placeholder="input userAge">
+    <input type="number" @keydown="handleInput2" v-model="salary" placeholder="input userSalary">
     <input v-model="mobile" placeholder="input usermobile">
 
     <!-- <p> {{ user }} id is: {{info.data}} </p> -->
@@ -32,17 +32,22 @@
 new Vue({
   el: '#app',
   data: {
-    userId: null,
+    userId: 0,
     user: 'user',
     info: 'user',
     quser: '',
     userName: '',
     name:'',
-    age: 1,
-    salary: 11,
+    age: 12,
+    salary: 111,
     mobile: '',
   },
   methods: {
+    handleInput2(e) {
+            // 通过正则过滤小数点后两位
+            e.target.value = (e.target.value.match(/^\d*(\.?\d{0,1})/g)[0]) || null
+    
+        },
     getuser: function () {
       axios
       .get('http://localhost:1323/users/'+this.userId)
@@ -64,8 +69,8 @@ new Vue({
       console.log(this.user);
       var postObj = {
           name: this.name,
-          age: this.age,
-          salary: this.salary,
+          age: this.age-0,
+          salary: this.salary-0,
           mobile: this.mobile,
       };
       axios

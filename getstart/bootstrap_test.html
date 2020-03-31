@@ -132,6 +132,7 @@
             .get("http://localhost:1323/users")
             .then(function (response){
                 console.log(response.data);
+                console.log(response);
                 _this.users = response.data;
             })
             .catch(function (err){
