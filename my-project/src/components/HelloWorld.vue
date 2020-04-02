@@ -34,7 +34,8 @@ export default {
       ok: false,
       message: 'vue',
       seen: 1,
-      url: 'http://localhost:8080'
+      url: 'http://localhost:8080',
+      content: ''
     }
   },
   methods: {
@@ -49,8 +50,15 @@ export default {
     },
     click3: function () {
       console.log('"click3"')
-      
-    },
+      this.axios.get('http://localhost:1323/users')
+        .then(response => {
+          this.content = response.data
+          console.log(response.data)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+    }
   }
 }
 </script>
