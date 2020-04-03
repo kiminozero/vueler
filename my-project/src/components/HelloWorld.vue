@@ -67,6 +67,18 @@ export default {
           console.log(error)
         })
     }
+  },
+  // created: function ()
+  created () {
+    console.log('created')
+    this.axios.get('http://localhost:1323/users')
+      .then(response => {
+        this.$content = response.data
+        console.log(response.data)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
   }
 }
 </script>
