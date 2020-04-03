@@ -1,6 +1,14 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <p>
+    <!-- 使用 router-link 组件来导航. -->
+    <!-- 通过传入 `to` 属性指定链接. -->
+    <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+    <router-link to="/">Go to Foo </router-link>
+    <span> &ensp;  </span>
+    <router-link to="/Hello2">Go to Bar</router-link>
+  </p>
     <router-view/>
   </div>
 </template>

@@ -1,20 +1,6 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>Using mustaches: {{ rawHtml }}</p>
-    <p v-html="rawHtml"></p>
-    <div v-bind:class="color">test..d</div>
-    <p>{{number+1}}</p>
-    <p>{{ok ? 'yes' : 'no'}}</p>
-    <p>{{message.split('').reverse().join('') }}</p>
-    <p v-if="seen">现在你看到我了</p>
-    <a v-bind:href="url">linkto</a>
-    <a v-on:click="doSomething">...</a>
-    <div @click="click1">
-      <div @click.stop="click2">
-        click me
-      </div>
-    </div>
     <h2>Essential Links</h2>
     <div @click="click3">
       click3 me
