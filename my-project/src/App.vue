@@ -8,7 +8,14 @@
     <router-link to="/">Go to Foo </router-link>
     <span> &ensp;  </span>
     <router-link to="/Hello2/Tom">Go to Bar</router-link>
-  </p>
+    </p>
+    <div id="nav" class="container">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><router-link to="/">Go to Foo </router-link></li>
+        <li role="presentation"><router-link to="/Hello2/Tom">Go to Tom</router-link></li>
+        <li role="presentation"><router-link to="/Hello2/Jerry">Go to Jerry</router-link></li>
+      </ul>
+    </div>
     <router-view/>
   </div>
 </template>
@@ -27,5 +34,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+#nav {
+
 }
 </style>

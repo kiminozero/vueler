@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h1>Welcome {{ username }}</h1>
+    <h2>Hello2</h2>
     <div @click="click3">click3 me</div>
     <el-row>
       <el-button>默认按钮</el-button>
