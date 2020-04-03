@@ -14,6 +14,7 @@
         <li role="presentation" class="active"><router-link to="/">Go to Foo </router-link></li>
         <li role="presentation"><router-link to="/Hello2/Tom">Go to Tom</router-link></li>
         <li role="presentation"><router-link to="/Hello2/Jerry">Go to Jerry</router-link></li>
+        <li role="presentation"><router-link to="/HelloStatic">Go to Static</router-link></li>
       </ul>
     </div>
     <router-view/>
