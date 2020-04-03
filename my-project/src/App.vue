@@ -7,7 +7,7 @@
     <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
     <router-link to="/">Go to Foo </router-link>
     <span> &ensp;  </span>
-    <router-link to="/Hello2">Go to Bar</router-link>
+    <router-link to="/Hello2/Tom">Go to Bar</router-link>
   </p>
     <router-view/>
   </div>

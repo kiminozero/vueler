@@ -2,13 +2,11 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
-    <div @click="click3">
-      click3 me
-    </div>
+    <div @click="click3">click3 me</div>
     <el-row>
       <el-button>默认按钮</el-button>
       <el-button type="primary" @click="click3">主要按钮</el-button>
-      <el-button type="success">成功按钮</el-button>
+      <el-button type="success" @click="click4">成功按钮</el-button>
       <el-button type="info">信息按钮</el-button>
       <el-button type="warning">警告按钮</el-button>
       <el-button type="danger">危险按钮</el-button>
@@ -32,6 +30,13 @@ export default {
       content: ''
     }
   },
+  computed: {
+    username () {
+      // 我们很快就会看到 `params` 是什么
+      console.log(this.$route.params.username)
+      return this.$route.params.username
+    }
+  },
   methods: {
     click1: function () {
       console.log('"click1"')
@@ -44,7 +49,8 @@ export default {
     },
     click3: function () {
       console.log('"click3"')
-      this.axios.get('http://localhost:1323/users')
+      this.axios
+        .get('http://localhost:1323/users')
         .then(response => {
           this.content = response.data
           console.log(response.data)
@@ -52,28 +58,39 @@ export default {
         .catch(function (error) {
           console.log(error)
         })
+    },
+    click4 () {
+      console.log(this.$route.params.username)
+      return this.$route.params.username
     }
   },
   // created: function ()
   created () {
     console.log('created')
-    this.axios.get('http://localhost:1323/users')
-      .then(response => {
-        this.$content = response.data
-        console.log(response.data)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
+    console.log(this.$route.params.username)
+    // this.axios.get('http://localhost:1323/users')
+    //   .then(response => {
+    //     this.$content = response.data
+    //     console.log(response.data)
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error)
+    //   })
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.red{color: red;}
-.blue{color: blue; font-size: 100px;}
-h1, h2 {
+.red {
+  color: red;
+}
+.blue {
+  color: blue;
+  font-size: 100px;
+}
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
