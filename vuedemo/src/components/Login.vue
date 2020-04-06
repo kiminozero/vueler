@@ -74,12 +74,16 @@ export default {
   methods: {
     submitForm(formName) {
         var data = this.$qs.stringify(this.ruleForm)
+        var vm = this
       this.$refs[formName].validate((valid) => {
         if (valid) {
         //   alert('submit!');
           this.axios.post('http://localhost:1323/login', data)
           .then(function(response){
               console.log(response.data)
+              if (response.data == 'ok') {
+                  vm.$router.push('/Home')
+              }
           })
         } else {
           this.$message.error('input not valid')
