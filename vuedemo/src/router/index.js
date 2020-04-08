@@ -5,6 +5,7 @@ import Login from '@/components/Login'
 import Home from '@/components/Home'
 import Productlist from '@/components/Productlist'
 import Productinfo from '@/components/Productinfo'
+import WebSocket from '@/components/WebSocket'
 
 
 Vue.use(Router)
@@ -15,6 +16,11 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+      path: '/websocket',
+      name: 'WebSocket',
+      component: WebSocket
     },
     {
       path: '/login',
