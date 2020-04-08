@@ -1,3 +1,4 @@
+<!-- ws demo back-end user go websocket -->
 <template>
   <div>
     <el-input type="textarea" :rows="10" placeholder="请输入内容" v-model="textarea"></el-input>
